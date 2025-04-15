@@ -1,0 +1,10 @@
+<h1>Recomendaciones de Tareas</h1>
+<ul>
+    {% for recomendacion in recomendaciones %}
+    <li>
+        Usuario: {{ recomendacion.usuario.nombre }} - Tarea: {{ recomendacion.tarea_sugerida.nombre }} (Probabilidad: {{ recomendacion.probabilidad_acierto }}%)
+    </li>
+    {% empty %}
+    <li>No hay recomendaciones disponibles.</li>
+    {% endfor %}
+</ul>

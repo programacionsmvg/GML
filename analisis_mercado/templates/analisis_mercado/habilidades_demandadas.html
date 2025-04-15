@@ -1,0 +1,6 @@
+<h1>Habilidades Demandadas</h1>
+<ul>
+    {% for habilidad in habilidades %}
+    <li>{{ habilidad.habilidad__nombre }} - {{ habilidad.cantidad }}</li>
+    {% endfor %}
+</ul>

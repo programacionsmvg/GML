@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+actor Administrador
+actor GestorProyectos
+actor Colaborador
+
+rectangle "Plataforma de Gestión de Tareas y Análisis del Mercado Laboral" {
+  usecase "Gestionar Usuarios" as UC1
+  usecase "Crear Proyecto" as UC2
+  usecase "Gestionar Tareas" as UC3
+  usecase "Asignar Tareas" as UC4
+  usecase "Completar Tareas" as UC5
+  usecase "Analizar Mercado Laboral" as UC6
+  usecase "Generar Recomendaciones IA" as UC7
+  usecase "Realizar Predicciones IA" as UC8
+  usecase "Gestionar Datos Externos" as UC9
+  usecase "CRUD Aplicación Escritorio" as UC10
+}
+
+Administrador -- UC1
+Administrador -- UC9
+Administrador -- UC10
+GestorProyectos -- UC2
+GestorProyectos -- UC3
+GestorProyectos -- UC4
+Colaborador -- UC5
+Colaborador -- UC7
+Administrador -- UC6
+Administrador -- UC8
+
+@enduml

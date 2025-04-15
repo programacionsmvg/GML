@@ -1,0 +1,6 @@
+<h1>Tendencias por Regiones</h1>
+<ul>
+    {% for region in regiones %}
+    <li>{{ region.ubicacion }} - {{ region.cantidad }}</li>
+    {% endfor %}
+</ul>

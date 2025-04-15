@@ -1,0 +1,6 @@
+<h1>Tendencias por Industrias</h1>
+<ul>
+    {% for industria in industrias %}
+    <li>{{ industria.tendencias_industria }} - {{ industria.cantidad }}</li>
+    {% endfor %}
+</ul>

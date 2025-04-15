@@ -1,0 +1,61 @@
+@startuml
+entity "Usuario" {
+  * id: int (PK)
+  --
+  + nombre: varchar
+  + email: varchar
+  + rol: varchar
+}
+
+entity "Proyecto" {
+  * id: int (PK)
+  --
+  + nombre: varchar
+  + fecha_inicio: date
+  + fecha_fin: date
+  + gestor_id: int (FK)
+}
+
+entity "Tarea" {
+  * id: int (PK)
+  --
+  + nombre: varchar
+  + descripcion: text
+  + fecha_limite: date
+  + estado: varchar
+  + prioridad: varchar
+  + proyecto_id: int (FK)
+}
+
+entity "Habilidad" {
+  * id: int (PK)
+  --
+  + nombre: varchar
+}
+
+entity "OfertaEmpleo" {
+  * id: int (PK)
+  --
+  + titulo: varchar
+  + empresa: varchar
+  + ubicacion: varchar
+  + salario: float
+  + fecha_publicacion: date
+}
+
+entity "DatoMercado" {
+  * id: int (PK)
+  --
+  + fecha: date
+  + habilidades_demandadas: text
+  + tendencias_region: text
+  + tendencias_industria: text
+}
+
+Usuario ||--o{ Proyecto : gestiona
+Proyecto ||--o{ Tarea : contiene
+Tarea }o--o{ Usuario : asignada a
+OfertaEmpleo }o--o{ Habilidad : requiere
+OfertaEmpleo ||--o{ DatoMercado : contribuye a
+
+@enduml

@@ -1,0 +1,15 @@
+<h1>Predicciones del Mercado Laboral</h1>
+
+<h2>Habilidades Futuras:</h2>
+<ul>
+    {% for habilidad in predicciones.habilidades_futuras %}
+    <li>{{ habilidad }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Tendencias Futuras:</h2>
+<ul>
+    {% for tendencia in predicciones.tendencias_futuras %}
+    <li>{{ tendencia }}</li>
+    {% endfor %}
+</ul>
