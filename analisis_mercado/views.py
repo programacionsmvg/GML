@@ -1,10 +1,10 @@
-# analisis_mercado/views.py
 from django.shortcuts import render
 from .models import DatoMercado
+from obtencion_datos_mercado.models import OfertaHabilidad, OfertaEmpleo  # Importar modelos necesarios
 from django.db.models import Count
 import matplotlib.pyplot as plt
 import io
-import urllib, base64
+import base64
 
 def analisis_principal(request):
     return render(request, 'analisis_mercado/analisis_principal.html')
@@ -12,7 +12,7 @@ def analisis_principal(request):
 def tendencias_mercado(request):
     datos = DatoMercado.objects.all().order_by('fecha')
     fechas = [dato.fecha.strftime('%Y-%m-%d') for dato in datos]
-    cantidad_ofertas = [dato.ofertas.count() for dato in datos]  # Asumiendo que DatoMercado tiene relación con Oferta
+    cantidad_ofertas = [dato.ofertas.count() for dato in datos]  # Verifica si esta relación existe en el modelo
 
     plt.figure(figsize=(10, 5))
     plt.plot(fechas, cantidad_ofertas)

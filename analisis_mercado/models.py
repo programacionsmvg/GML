@@ -1,3 +1,4 @@
+# analisis_mercado/models.py
 from django.db import models
 
 class DatoMercado(models.Model):

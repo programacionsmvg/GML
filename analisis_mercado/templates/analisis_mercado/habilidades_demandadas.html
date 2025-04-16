@@ -2,5 +2,7 @@
 <ul>
     {% for habilidad in habilidades %}
     <li>{{ habilidad.habilidad__nombre }} - {{ habilidad.cantidad }}</li>
+    {% empty %}
+    <li>No hay habilidades registradas.</li>
     {% endfor %}
 </ul>

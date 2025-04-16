@@ -4,5 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.lista_ofertas, name='lista_ofertas'),
-    # TODO: Añadir URLs para web scraping e importación de datos
+    path('extraer_tecnoempleo/', views.extraer_ofertas_tecnoempleo, name='extraer_tecnoempleo'),
+    path('extraer_infojobs/', views.extraer_ofertas_infojobs, name='extraer_infojobs'),
+    path('extraer_linkedin/', views.extraer_ofertas_linkedin, name='extraer_linkedin'),
 ]
