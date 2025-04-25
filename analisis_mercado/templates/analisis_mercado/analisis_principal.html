@@ -1,5 +1,55 @@
-<h1>Análisis del Mercado Laboral</h1>
-<a href="{% url 'tendencias_mercado' %}">Tendencias del Mercado</a>
-<a href="{% url 'habilidades_demandadas' %}">Habilidades Demandadas</a>
-<a href="{% url 'tendencias_regiones' %}">Tendencias por Regiones</a>
-<a href="{% url 'tendencias_industrias' %}">Tendencias por Industrias</a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del Mercado Laboral</title>
+    <style>
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #888888;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Análisis del Mercado Laboral</h1>
+        <a href="{% url 'tendencias_mercado' %}">Tendencias del Mercado</a>
+        <a href="{% url 'habilidades_demandadas' %}">Habilidades Demandadas</a>
+        <a href="{% url 'tendencias_regiones' %}">Tendencias por Regiones</a>
+        <a href="{% url 'tendencias_industrias' %}">Tendencias por Industrias</a>
+    </div>
+</body>
+</html>

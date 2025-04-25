@@ -1,11 +1,82 @@
-<h1>Lista de Proyectos</h1>
-<a href="{% url 'crear_proyecto' %}">Crear Proyecto</a>
-<ul>
-    {% for proyecto in proyectos %}
-    <li>
-        {{ proyecto.nombre }} - {{ proyecto.fecha_inicio }} - {{ proyecto.fecha_fin }}
-        <a href="{% url 'editar_proyecto' proyecto.id %}">Editar</a>
-        <a href="{% url 'eliminar_proyecto' proyecto.id %}">Eliminar</a>
-    </li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Proyectos</title>
+    <style>
+        body {
+            font-family: 'Century Gothic', Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #888888;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #555555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .actions a {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Proyectos</h1>
+        <a href="{% url 'crear_proyecto' %}">Crear Proyecto</a>
+        <ul>
+            {% for proyecto in proyectos %}
+            <li>
+                <span>{{ proyecto.nombre }} - {{ proyecto.fecha_inicio }} - {{ proyecto.fecha_fin }}</span>
+                <div class="actions">
+                    <a href="{% url 'editar_proyecto' proyecto.id %}">Editar</a>
+                    <a href="{% url 'eliminar_proyecto' proyecto.id %}">Eliminar</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
